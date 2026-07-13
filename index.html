@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Defensas metálicas e terminais absorvedores certificados para rodovias, vias urbanas e projetos de infraestrutura. Fale com a equipe técnica JMafer.">
+  <meta name="theme-color" content="#e8eef2">
+  <meta property="og:title" content="Defensas metálicas certificadas | JMafer">
+  <meta property="og:description" content="Engenharia, documentação técnica e atendimento nacional para projetos de segurança viária.">
+  <meta property="og:image" content="assets/hero-integrated-v4.png">
+  <title>Defensas metálicas certificadas | JMafer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <style>
+    @font-face {
+      font-family: "Galgo";
+      src: url("assets/fonts/GalgoVF.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 300 700;
+      font-display: swap;
+    }
+
+    :root {
+      --ink: #0a1521;
+      --navy: #071d3f;
+      --blue: #1558d6;
+      --sky: #e8eef2;
+      --paper: #f7f8f7;
+      --white: #fff;
+      --line: #bcc8d1;
+      --muted: #52606c;
+      --signal: #ffd028;
+      --green: #087d5a;
+      --max: 1280px;
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.menu-open { overflow: hidden; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    p { text-wrap: pretty; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
+    .container { width: min(var(--max), calc(100% - 64px)); margin-inline: auto; }
+    .section { padding: 116px 0; }
+    .eyebrow {
+      margin: 0 0 30px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .section-title {
+      margin: 0;
+      max-width: 1080px;
+      font-family: "Galgo", "Arial Narrow", sans-serif;
+      font-size: 106px;
+      line-height: .92;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+    .section-lead { max-width: 700px; margin: 24px 0 0; color: var(--muted); font-size: 19px; }
+
+    .btn {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background: none;
+      color: inherit;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn svg { width: 19px; height: 19px; }
+    .btn--dark { background: var(--ink); color: var(--white); box-shadow: 0 14px 34px rgba(10,21,33,.18); }
+    .btn--dark:hover { background: var(--blue); }
+    .btn--signal { background: var(--signal); color: var(--ink); }
+    .btn--signal:hover { background: #ffe064; }
+    .btn--line { border-color: rgba(10,21,33,.38); background: rgba(255,255,255,.28); }
+    .btn--line:hover { background: var(--white); }
+
+    .hero-shell { padding: 10px 10px 0; background: var(--paper); }
+    .hero {
+      position: relative;
+      height: min(850px, calc(100svh - 44px));
+      min-height: 720px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--sky);
+      isolation: isolate;
+    }
+    .hero__atmosphere {
+      position: absolute;
+      z-index: -3;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 1;
+      filter: saturate(.92) contrast(1.03);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      background: rgba(3,14,30,.2);
+    }
+    .hero__header {
+      position: relative;
+      z-index: 10;
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      border-bottom: 1px solid rgba(255,255,255,.3);
+    }
+    .brand { width: 196px; flex: 0 0 auto; }
+    .brand img { width: 100%; height: auto; }
+    .nav { display: flex; align-items: center; gap: 32px; }
+    .nav > a:not(.btn) { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 700; }
+    .nav > a:not(.btn):hover { color: var(--signal); }
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(10,21,33,.35);
+      border-radius: 50%;
+      background: rgba(255,255,255,.42);
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .menu-toggle svg { width: 22px; height: 22px; }
+    .hero__intro {
+      position: absolute;
+      z-index: 4;
+      top: 118px;
+      left: max(32px, calc((100% - var(--max)) / 2));
+      width: 330px;
+    }
+    .hero__intro p { margin: 0; color: var(--white); font-size: 15px; font-weight: 600; line-height: 1.55; text-shadow: 0 2px 20px rgba(0,0,0,.34); }
+    .hero__intro span { display: block; margin-bottom: 12px; color: var(--signal); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    .hero__spec {
+      position: absolute;
+      z-index: 4;
+      top: 122px;
+      right: max(32px, calc((100% - var(--max)) / 2));
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 26px;
+    }
+    .hero__spec div { min-width: 96px; border-left: 1px solid rgba(255,255,255,.5); padding-left: 12px; }
+    .hero__spec strong { display: block; color: var(--white); font-size: 14px; }
+    .hero__spec span { display: block; margin-top: 4px; color: #d5dfeb; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+    .hero__title {
+      position: absolute;
+      z-index: 3;
+      top: 192px;
+      right: max(32px, calc((100% - var(--max)) / 2));
+      width: 780px;
+      margin: 0;
+      color: var(--white);
+      font-family: "Galgo", "Arial Narrow", sans-serif;
+      font-size: 188px;
+      line-height: .7;
+      font-weight: 700;
+      text-align: right;
+      text-transform: uppercase;
+      text-shadow: 0 4px 30px rgba(0,0,0,.34);
+    }
+    .hero__title span {
+      display: block;
+      margin-top: 18px;
+      color: var(--signal);
+      font-family: "Manrope", sans-serif;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 800;
+      text-shadow: none;
+    }
+    .hero__action {
+      position: absolute;
+      z-index: 5;
+      right: max(32px, calc((100% - var(--max)) / 2));
+      bottom: 45px;
+      width: 280px;
+      padding: 20px;
+      background: rgba(247,248,247,.92);
+      border: 1px solid rgba(10,21,33,.18);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 45px rgba(10,21,33,.12);
+      backdrop-filter: blur(14px);
+    }
+    .hero__action p { margin: 0 0 14px; font-size: 13px; font-weight: 700; }
+    .hero__action .btn { width: 100%; }
+    .cta-note { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 10px 0 0; color: #687580; font-size: 10px; line-height: 1.35; text-align: center; }
+    .cta-note svg { width: 13px; height: 13px; flex: 0 0 auto; }
+    .scroll-cue {
+      position: absolute;
+      z-index: 6;
+      left: 50%;
+      bottom: 20px;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.75);
+      color: var(--white);
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+    .scroll-cue svg { width: 18px; height: 18px; }
+    .proof-rail { border-bottom: 1px solid var(--line); background: var(--white); }
+    .proof-rail__inner { min-height: 98px; display: grid; grid-template-columns: 1.2fr repeat(4, 1fr); }
+    .proof-rail__label, .proof-chip { display: flex; align-items: center; gap: 12px; padding: 20px 24px; border-right: 1px solid var(--line); }
+    .proof-rail__label { padding-left: 0; color: var(--blue); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .proof-chip:last-child { border-right: 0; padding-right: 0; }
+    .proof-chip svg { width: 22px; height: 22px; color: var(--green); flex: 0 0 auto; }
+    .proof-chip strong { display: block; font-size: 13px; line-height: 1.25; }
+    .proof-chip span { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; text-transform: uppercase; }
+
+    .manifesto { background: var(--paper); }
+    .manifesto__grid { display: block; }
+    .manifesto__copy { max-width: 1100px; margin-left: auto; }
+    .manifesto__copy .section-title { max-width: 1020px; font-size: 112px; }
+    .manifesto__copy > p { max-width: 760px; margin: 28px 0 0; color: var(--muted); font-size: 20px; }
+    .specifier-line { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 58px; border-top: 1px solid var(--ink); }
+    .specifier-line div { min-height: 112px; padding: 19px 18px 12px 0; border-right: 1px solid var(--line); }
+    .specifier-line div + div { padding-left: 18px; }
+    .specifier-line div:last-child { border-right: 0; }
+    .specifier-line span { display: block; color: var(--blue); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    .specifier-line strong { display: block; margin-top: 22px; font-size: 14px; }
+
+    .solutions { padding: 0; background: var(--white); border-top: 1px solid var(--line); }
+    .solutions__head { padding: 112px 0 66px; display: flex; justify-content: space-between; gap: 44px; align-items: end; }
+    .solutions__head > div:first-child { flex: 1 1 760px; }
+    .solutions__head .section-title { max-width: 760px; }
+    .solutions__head .section-lead { margin: 0; max-width: 420px; }
+    .solution-row { position: relative; min-height: 190px; display: grid; grid-template-columns: 100px 1.3fr 1fr auto; gap: 34px; align-items: center; border-top: 1px solid var(--line); transition: background 180ms ease, padding 180ms ease; }
+    .solution-row:last-child { border-bottom: 1px solid var(--line); }
+    .solution-row:hover { background: var(--sky); padding-inline: 18px; }
+    .solution-row__index { color: var(--blue); font-size: 12px; font-weight: 800; }
+    .solution-row h3 { margin: 0; font-family: "Galgo", "Arial Narrow", sans-serif; font-size: 66px; line-height: .92; font-weight: 700; text-transform: uppercase; text-wrap: balance; }
+    .solution-row p { margin: 0; color: var(--muted); font-size: 14px; }
+    .solution-row a { width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid var(--ink); border-radius: 50%; color: var(--ink); }
+    .solution-row a:hover { background: var(--ink); color: var(--white); }
+    .solution-row a svg { width: 20px; height: 20px; }
+
+    .terminal { overflow: hidden; background: var(--navy); color: var(--white); }
+    .terminal .eyebrow { color: var(--signal); }
+    .terminal__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 72px; align-items: center; }
+    .terminal__visual { position: relative; min-height: 650px; overflow: hidden; border-radius: var(--radius); background: #020b17; }
+    .terminal__visual::before { content: "TAE"; position: absolute; z-index: 2; top: 26px; left: 28px; color: rgba(255,255,255,.16); font-family: "Galgo", "Arial Narrow", sans-serif; font-size: 190px; line-height: .7; font-weight: 700; }
+    .terminal__visual img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 57% center; }
+    .terminal__caption { position: absolute; z-index: 3; left: 28px; bottom: 24px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.55); color: var(--white); font-size: 10px; font-weight: 800; text-transform: uppercase; }
+    .terminal__copy .section-title { font-size: 96px; }
+    .terminal__copy > p { max-width: 590px; color: #becbda; font-size: 18px; }
+    .models { display: grid; grid-template-columns: 1fr 1fr; margin: 38px 0 32px; border-top: 1px solid #3a5578; border-bottom: 1px solid #3a5578; }
+    .model { padding: 24px 18px 24px 0; }
+    .model + .model { padding-left: 24px; border-left: 1px solid #3a5578; }
+    .model strong { display: block; color: var(--signal); font-family: "Galgo", "Arial Narrow", sans-serif; font-size: 48px; line-height: .9; font-weight: 700; }
+    .model span { display: block; margin-top: 5px; color: #c4cfdd; font-size: 12px; font-weight: 700; }
+    .feature-list { display: grid; gap: 13px; margin: 0 0 32px; padding: 0; list-style: none; }
+    .feature-list li { display: flex; gap: 11px; align-items: flex-start; color: #d9e1eb; font-size: 14px; }
+    .feature-list svg { width: 19px; height: 19px; flex: 0 0 auto; margin-top: 2px; color: var(--signal); }
+    .partner { margin-top: 30px; padding-top: 24px; display: flex; align-items: center; gap: 18px; border-top: 1px solid #3a5578; color: #bdc9d7; font-size: 12px; }
+    .partner img { width: 155px; padding: 8px; background: var(--white); }
+
+    .field-story { position: relative; height: min(780px, 82svh); min-height: 620px; overflow: hidden; color: var(--white); background: var(--ink); }
+    .field-story::after { content: ""; position: absolute; z-index: 1; inset: 0; background: rgba(3,13,27,.28); }
+    .field-story > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .field-story__copy { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end; padding-bottom: 72px; text-align: right; }
+    .field-story__copy .eyebrow { color: var(--signal); }
+    .field-story__copy h2 { max-width: 900px; margin: 0; font-family: "Galgo", "Arial Narrow", sans-serif; font-size: 118px; line-height: .9; font-weight: 700; text-transform: uppercase; text-shadow: 0 3px 26px rgba(0,0,0,.42); text-wrap: balance; }
+    .field-story__copy p { max-width: 520px; margin: 24px 0 0; color: #e2e9f1; font-size: 16px; text-shadow: 0 2px 18px rgba(0,0,0,.5); }
+
+    .capability { background: var(--signal); }
+    .capability__head { display: grid; grid-template-columns: 1.2fr .8fr; gap: 80px; align-items: end; }
+    .capability .eyebrow { color: var(--ink); }
+    .capability__head p { margin: 0; font-size: 18px; }
+    .capability-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 58px; border-top: 1px solid rgba(10,21,33,.45); }
+    .capability-item { min-height: 230px; padding: 28px 24px 20px 0; border-right: 1px solid rgba(10,21,33,.28); }
+    .capability-item + .capability-item { padding-left: 24px; }
+    .capability-item:last-child { border-right: 0; }
+    .capability-item svg { width: 28px; height: 28px; }
+    .capability-item h3 { margin: 52px 0 12px; font-size: 17px; }
+    .capability-item p { margin: 0; font-size: 13px; }
+
+    .process { background: var(--paper); }
+    .process__head { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: end; }
+    .process__head p { margin: 0; color: var(--muted); font-size: 18px; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 62px; counter-reset: step; border-top: 1px solid var(--ink); }
+    .process-step { min-height: 250px; padding: 24px 24px 20px 0; border-right: 1px solid var(--line); counter-increment: step; }
+    .process-step + .process-step { padding-left: 24px; }
+    .process-step:last-child { border-right: 0; }
+    .process-step::before { content: "0" counter(step); color: var(--blue); font-family: "Galgo", "Arial Narrow", sans-serif; font-size: 46px; line-height: .8; font-weight: 700; }
+    .process-step h3 { margin: 60px 0 10px; font-size: 16px; }
+    .process-step p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .quote { padding: 10px; background: var(--paper); }
+    .quote__shell { border-radius: var(--radius); background: var(--blue); color: var(--white); overflow: hidden; }
+    .quote__grid { min-height: 760px; display: grid; grid-template-columns: .86fr 1.14fr; gap: 84px; align-items: center; }
+    .quote .eyebrow { color: var(--signal); }
+    .quote .section-title { font-size: 100px; }
+    .quote__intro > p { max-width: 520px; color: #dce7ff; font-size: 17px; }
+    .quote__channels { margin-top: 40px; display: grid; gap: 13px; }
+    .quote__channel { display: flex; gap: 11px; align-items: center; font-size: 13px; font-weight: 700; }
+    .quote__channel svg { width: 19px; height: 19px; color: var(--signal); }
+    .form { padding: 36px; border-radius: var(--radius); background: var(--white); color: var(--ink); box-shadow: 0 28px 70px rgba(2,18,50,.28); }
+    .form h3 { margin: 0; font-size: 21px; }
+    .form__note { margin: 5px 0 24px; color: var(--muted); font-size: 12px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    .field { display: grid; gap: 7px; }
+    .field--full { grid-column: 1 / -1; }
+    .field label { font-size: 12px; font-weight: 800; }
+    .field input, .field select, .field textarea { width: 100%; min-height: 48px; padding: 11px 12px; border: 1px solid #aeb9c3; border-radius: 3px; background: var(--white); color: var(--ink); }
+    .field textarea { min-height: 100px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--blue); outline: 2px solid rgba(21,88,214,.14); }
+    .consent { grid-column: 1 / -1; display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: 11px; }
+    .consent input { width: 18px; height: 18px; margin: 0; flex: 0 0 auto; }
+    .form .btn { width: 100%; margin-top: 2px; }
+    .form .cta-note { margin-top: -2px; }
+    .form-feedback { min-height: 20px; margin: 8px 0 0; color: var(--green); font-size: 12px; font-weight: 800; }
+
+    .faq { background: var(--paper); }
+    .faq__grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 90px; align-items: start; }
+    .faq .section-title { font-size: 90px; }
+    .faq-list { border-top: 1px solid var(--ink); }
+    details { border-bottom: 1px solid var(--line); }
+    summary { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 0; cursor: pointer; font-size: 14px; font-weight: 800; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; flex: 0 0 auto; color: var(--blue); font-size: 27px; font-weight: 500; }
+    details[open] summary::after { content: "-"; }
+    details p { margin: 0; padding: 0 46px 25px 0; color: var(--muted); font-size: 14px; }
+
+    .final-cta { border-top: 1px solid var(--line); background: var(--white); }
+    .final-cta__inner { min-height: 380px; display: grid; grid-template-columns: 1fr auto; gap: 50px; align-items: center; }
+    .final-cta h2 { margin: 0; max-width: 1040px; font-family: "Galgo", "Arial Narrow", sans-serif; font-size: 116px; line-height: .9; font-weight: 700; text-transform: uppercase; text-wrap: balance; }
+    .final-cta h2 span { color: var(--blue); }
+    .final-cta__action { display: grid; justify-items: stretch; min-width: 224px; }
+    .footer { padding: 46px 0 100px; background: var(--ink); color: #b8c4cf; }
+    .footer__grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 50px; }
+    .footer__brand { width: 210px; height: auto; padding: 10px; background: var(--white); }
+    .footer h3 { margin: 0 0 12px; color: var(--white); font-size: 13px; }
+    .footer p { margin: 0; font-size: 12px; }
+    .footer a { text-decoration: none; }
+    .footer a:hover { color: var(--white); }
+    .sticky-wa { position: fixed; z-index: 30; right: 22px; bottom: 22px; width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; background: var(--signal); color: var(--ink); box-shadow: 0 12px 32px rgba(10,21,33,.28); text-decoration: none; transition: transform 180ms ease; }
+    .sticky-wa:hover { transform: translateY(-3px); }
+    .sticky-wa svg { width: 26px; height: 26px; }
+
+    .lead-gate {
+      width: min(520px, calc(100% - 32px));
+      max-height: calc(100svh - 32px);
+      margin: auto;
+      padding: 0;
+      border: 0;
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 34px 90px rgba(2,13,31,.42);
+      overflow: auto;
+    }
+    .lead-gate::backdrop { background: rgba(2,11,25,.76); backdrop-filter: blur(8px); }
+    .lead-gate__form { padding: 34px; }
+    .lead-gate__head { display: flex; justify-content: space-between; gap: 24px; align-items: flex-start; margin-bottom: 26px; }
+    .lead-gate__head .eyebrow { margin-bottom: 9px; }
+    .lead-gate__head h2 { margin: 0; max-width: 360px; font-family: "Galgo", "Arial Narrow", sans-serif; font-size: 40px; line-height: .96; font-weight: 700; text-transform: uppercase; text-wrap: balance; }
+    .lead-gate__close { width: 42px; height: 42px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--white); color: var(--ink); cursor: pointer; }
+    .lead-gate__close:hover { background: var(--sky); }
+    .lead-gate__close svg { width: 20px; height: 20px; }
+    .lead-gate__intro { margin: -10px 0 24px; color: var(--muted); font-size: 13px; }
+    .lead-gate__fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .lead-gate .field--wide { grid-column: 1 / -1; }
+    .lead-gate .consent { margin-top: 2px; }
+    .lead-gate__submit { grid-column: 1 / -1; width: 100%; margin-top: 2px; }
+    .lead-gate__privacy { grid-column: 1 / -1; margin: -6px 0 0; color: #6b7782; font-size: 10px; text-align: center; }
+
+    @media (max-width: 1100px) {
+      .section-title { font-size: 86px; }
+      .hero__title { top: 218px; width: 620px; font-size: 150px; }
+      .hero__spec { grid-template-columns: repeat(2, auto); }
+      .hero__spec div:last-child { display: none; }
+      .manifesto__copy .section-title { font-size: 90px; }
+      .terminal__copy .section-title { font-size: 78px; }
+      .quote .section-title { font-size: 82px; }
+      .faq .section-title { font-size: 76px; }
+      .terminal__grid { gap: 36px; }
+      .terminal__visual { min-height: 560px; }
+      .solution-row { grid-template-columns: 70px 1.2fr 1fr auto; gap: 22px; }
+    }
+
+    @media (max-width: 860px) {
+      .container { width: min(var(--max), calc(100% - 36px)); }
+      .section { padding: 84px 0; }
+      .section-title { font-size: 76px; }
+      .hero-shell { padding: 6px 6px 0; }
+      .hero { height: 820px; min-height: 0; }
+      .hero__header { height: 72px; }
+      .brand { width: 170px; }
+      .menu-toggle { display: inline-flex; }
+      .nav { position: fixed; z-index: 40; inset: 6px 6px auto; min-height: 420px; padding: 95px 24px 28px; display: none; flex-direction: column; align-items: stretch; gap: 0; border-radius: var(--radius); background: var(--white); box-shadow: 0 30px 80px rgba(10,21,33,.24); }
+      .nav.is-open { display: flex; }
+      .nav > a:not(.btn) { padding: 16px 0; border-bottom: 1px solid var(--line); color: var(--ink); font-size: 15px; }
+      .nav .btn { margin-top: 20px; }
+      .menu-toggle { position: relative; z-index: 50; }
+      .hero__intro { top: 104px; left: 24px; width: 285px; }
+      .hero__intro p { font-size: 13px; }
+      .hero__spec { display: none; }
+      .hero__title { top: 230px; right: 24px; width: 560px; font-size: 126px; line-height: .72; }
+      .hero__title span { margin-top: 13px; font-size: 12px; }
+      .hero__action { right: 18px; bottom: 25px; width: 252px; padding: 16px; }
+      .scroll-cue { display: none; }
+      .proof-rail__inner { grid-template-columns: repeat(2, 1fr); }
+      .proof-rail__label { display: none; }
+      .proof-chip { min-height: 76px; padding: 15px; border-bottom: 1px solid var(--line); }
+      .terminal__grid, .capability__head, .process__head, .quote__grid, .faq__grid { grid-template-columns: 1fr; }
+      .manifesto__copy { margin-left: 0; }
+      .manifesto__copy .section-title { font-size: 80px; }
+      .specifier-line { grid-template-columns: repeat(2, 1fr); }
+      .solutions__head { align-items: start; flex-direction: column; padding: 84px 0 52px; gap: 30px; }
+      .solution-row { grid-template-columns: 50px 1fr auto; min-height: 160px; }
+      .solution-row p { grid-column: 2 / 3; }
+      .solution-row a { grid-column: 3; grid-row: 1 / span 2; }
+      .terminal__visual { min-height: 460px; order: 2; }
+      .terminal__visual img { inset: 0; width: 100%; }
+      .terminal__copy { order: 1; }
+      .capability-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .quote__grid { gap: 44px; padding: 70px 0; }
+      .final-cta__inner { min-height: 330px; grid-template-columns: 1fr; gap: 32px; padding: 70px 0; }
+      .terminal__copy .section-title { font-size: 72px; }
+      .quote .section-title { font-size: 76px; }
+      .faq .section-title { font-size: 72px; }
+      .final-cta h2 { font-size: 86px; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: calc(100% - 28px); }
+      .section { padding: 72px 0; }
+      .section-title { font-size: 64px; }
+      .section-lead { font-size: 16px; }
+      .hero { height: 780px; }
+      .hero__header { height: 66px; }
+      .brand { width: 148px; }
+      .hero__intro { top: 238px; right: 18px; left: auto; width: 230px; text-align: right; }
+      .hero__intro span { margin-bottom: 8px; }
+      .hero__title { top: 96px; right: 18px; width: 340px; font-size: 100px; line-height: .7; }
+      .hero__title span { margin-top: 10px; font-size: 10px; }
+      .hero__atmosphere { opacity: 1; object-position: 37% center; }
+      .hero__action { left: 18px; right: 18px; bottom: 18px; width: auto; }
+      .hero__action p { display: none; }
+      .proof-rail__inner { width: 100%; grid-template-columns: 1fr 1fr; }
+      .proof-chip { padding: 13px 10px; }
+      .proof-chip strong { font-size: 11px; }
+      .proof-chip span { font-size: 8px; }
+      .manifesto__copy .section-title { font-size: 68px; }
+      .manifesto__copy > p { font-size: 17px; }
+      .specifier-line { margin-top: 42px; }
+      .specifier-line div { min-height: 104px; }
+      .solutions__head { padding: 72px 0 44px; gap: 24px; }
+      .solution-row { grid-template-columns: 36px 1fr 42px; gap: 12px; padding: 24px 0; }
+      .solution-row:hover { padding-inline: 8px; }
+      .solution-row h3 { font-size: 44px; }
+      .solution-row p { font-size: 12px; }
+      .solution-row a { width: 42px; height: 42px; }
+      .terminal__copy .section-title { font-size: 66px; }
+      .terminal__visual { min-height: 300px; }
+      .terminal__visual::before { font-size: 104px; }
+      .terminal__visual img { inset: 0; width: 100%; }
+      .field-story { height: 610px; min-height: 0; }
+      .field-story > img { object-position: 43% center; }
+      .field-story__copy { align-items: flex-start; justify-content: flex-end; padding-bottom: 42px; text-align: left; }
+      .field-story__copy h2 { max-width: 340px; font-size: 66px; }
+      .field-story__copy p { max-width: 320px; font-size: 14px; }
+      .models { margin-top: 28px; }
+      .model strong { font-size: 36px; }
+      .partner { align-items: flex-start; flex-direction: column; }
+      .capability-grid, .process-grid { grid-template-columns: 1fr; }
+      .capability-item, .process-step { min-height: 185px; border-right: 0; border-bottom: 1px solid rgba(10,21,33,.28); }
+      .capability-item + .capability-item, .process-step + .process-step { padding-left: 0; }
+      .capability-item h3, .process-step h3 { margin-top: 32px; }
+      .quote { padding: 6px; }
+      .quote .section-title { font-size: 66px; }
+      .form { padding: 22px 18px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field--full, .consent { grid-column: auto; }
+      .faq .section-title { font-size: 64px; }
+      .final-cta h2 { font-size: 72px; }
+      .final-cta .btn { width: 100%; }
+      .footer__grid { grid-template-columns: 1fr; gap: 30px; }
+      .sticky-wa { right: 14px; bottom: 14px; width: 52px; height: 52px; }
+      .lead-gate__form { padding: 26px 20px 22px; }
+      .lead-gate__head h2 { font-size: 34px; }
+      .lead-gate__fields { grid-template-columns: 1fr; }
+      .lead-gate .field--wide, .lead-gate__submit, .lead-gate__privacy { grid-column: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="hero-shell" id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero__atmosphere" src="assets/hero-integrated-v4.png" alt="Terminal absorvedor instalado em uma defensa metálica ao lado de uma rodovia" width="1672" height="941">
+        <header class="container hero__header">
+          <a class="brand" href="#inicio" aria-label="JMafer - início">
+            <img src="assets/jmafer-logo-compact.png" alt="JMafer - Qualidade e Tecnologia" width="900" height="259">
+          </a>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
+            <i data-lucide="menu" aria-hidden="true"></i>
+          </button>
+          <nav class="nav" id="main-nav" aria-label="Navegação principal">
+            <a href="#solucoes">Soluções</a>
+            <a href="#terminais">Terminais P2 e P4</a>
+            <a href="#diferenciais">Engenharia</a>
+            <a href="#duvidas">Dúvidas</a>
+            <a class="btn btn--signal" href="#orcamento" data-cta="nav_quote"><i data-lucide="file-check-2" aria-hidden="true"></i> Solicitar análise técnica</a>
+          </nav>
+        </header>
+
+        <div class="hero__intro">
+          <span>Defensas e terminais / JMafer</span>
+          <p>Soluções para obras rodoviárias, vias urbanas e áreas de risco, com suporte à especificação, documentação técnica e atendimento nacional.</p>
+        </div>
+
+        <div class="hero__spec" aria-label="Especificações principais">
+          <div><strong>80 km/h</strong><span>Terminal P2</span></div>
+          <div><strong>110 km/h</strong><span>Terminal P4</span></div>
+          <div><strong>Brasil</strong><span>Atendimento nacional</span></div>
+        </div>
+
+        <h1 class="hero__title" id="hero-title" aria-label="Defensas metálicas certificadas">Defensas<span>Metálicas certificadas</span></h1>
+
+        <div class="hero__action">
+          <p>Envie o que já sabe sobre o trecho. A equipe orienta o próximo passo técnico e comercial.</p>
+          <a class="btn btn--signal js-wa" href="https://wa.me/5511933989839" data-cta="hero_analysis" data-message="Olá, vim pela página de defensas metálicas e gostaria de analisar um projeto.">
+            <i data-lucide="message-circle" aria-hidden="true"></i> Solicitar análise técnica
+          </a>
+          <span class="cta-note"><i data-lucide="clock-3" aria-hidden="true"></i> Cerca de 1 minuto. Você revisa antes de enviar.</span>
+        </div>
+        <a class="scroll-cue" href="#visao" aria-label="Ver mais"><i data-lucide="arrow-down" aria-hidden="true"></i></a>
+      </section>
+    </div>
+
+    <section class="proof-rail" aria-label="Conformidade e capacidade">
+      <div class="container proof-rail__inner">
+        <div class="proof-rail__label">Provas para especificar com segurança</div>
+        <div class="proof-chip"><i data-lucide="badge-check" aria-hidden="true"></i><div><strong>ABNT NBR 15486</strong><span>Referência técnica</span></div></div>
+        <div class="proof-chip"><i data-lucide="shield-check" aria-hidden="true"></i><div><strong>EN 1317</strong><span>Referência de desempenho</span></div></div>
+        <div class="proof-chip"><i data-lucide="award" aria-hidden="true"></i><div><strong>ISO 9001:2015</strong><span>Gestão da qualidade</span></div></div>
+        <div class="proof-chip"><i data-lucide="truck" aria-hidden="true"></i><div><strong>Atendimento nacional</strong><span>Obras em todo o Brasil</span></div></div>
+      </div>
+    </section>
+
+    <section class="section manifesto" id="visao">
+      <div class="container manifesto__grid">
+        <div class="manifesto__copy">
+          <p class="eyebrow">O projeto começa antes da instalação</p>
+          <h2 class="section-title">Quatro variáveis definem a defensa certa para o trecho.</h2>
+          <p>A especificação combina nível de contenção, severidade de impacto, largura de trabalho e condições de instalação. Ignorar uma delas aumenta o risco técnico e comercial da compra.</p>
+          <div class="specifier-line" aria-label="Critérios de especificação">
+            <div><span>01 / Contenção</span><strong>Classe exigida pelo projeto</strong></div>
+            <div><span>02 / Impacto</span><strong>Velocidade e severidade</strong></div>
+            <div><span>03 / Espaço</span><strong>Largura de trabalho</strong></div>
+            <div><span>04 / Instalação</span><strong>Solo, barreira e geometria</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="solutions" id="solucoes">
+      <div class="container">
+        <div class="solutions__head">
+          <div>
+            <p class="eyebrow">Portfólio de segurança viária</p>
+            <h2 class="section-title">Três soluções. Critérios diferentes de especificação.</h2>
+          </div>
+          <p class="section-lead">Se você já tem projeto ou memorial, envie a especificação. Se ainda está definindo a solução, a equipe ajuda a organizar os critérios do trecho.</p>
+        </div>
+
+        <article class="solution-row">
+          <span class="solution-row__index">01 / 03</span>
+          <h3>Defensas certificadas</h3>
+          <p>Sistemas ensaiados para diferentes níveis de contenção, severidade e larguras de trabalho.</p>
+          <a class="js-wa" href="https://wa.me/5511933989839" data-cta="solution_certified" data-message="Olá, preciso de uma defensa metálica certificada para um projeto." aria-label="Analisar defensa certificada"><i data-lucide="arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="solution-row">
+          <span class="solution-row__index">02 / 03</span>
+          <h3>Defensas semimaleáveis</h3>
+          <p>Conjuntos galvanizados e acessórios para contenção longitudinal conforme o projeto.</p>
+          <a class="js-wa" href="https://wa.me/5511933989839" data-cta="solution_semimaleavel" data-message="Olá, gostaria de cotar defensas metálicas semimaleáveis." aria-label="Cotar defensas semimaleáveis"><i data-lucide="arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="solution-row">
+          <span class="solution-row__index">03 / 03</span>
+          <h3>Terminais absorvedores</h3>
+          <p>Dispositivos P2 e P4 para dissipar energia, proteger extremidades e redirecionar impactos.</p>
+          <a href="#terminais" aria-label="Ver detalhes dos terminais P2 e P4"><i data-lucide="arrow-right" aria-hidden="true"></i></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section terminal" id="terminais">
+      <div class="container terminal__grid">
+        <div class="terminal__visual">
+          <img src="assets/tae-macro-v3.png" alt="Detalhe das células de aço galvanizado e fixações de um terminal absorvedor" width="1448" height="1086" loading="lazy">
+          <span class="terminal__caption">Aço galvanizado / absorção por deformação controlada</span>
+        </div>
+        <div class="terminal__copy">
+          <p class="eyebrow">Terminal absorvedor de energia</p>
+          <h2 class="section-title">P2 ou P4: a velocidade do trecho muda o terminal.</h2>
+          <p>O terminal atua por deformação controlada para dissipar a energia do impacto frontal e redirecionar o veículo em impactos laterais.</p>
+          <div class="models" aria-label="Modelos de terminal">
+            <div class="model"><strong>P2 / T80</strong><span>Classe de velocidade de 80 km/h</span></div>
+            <div class="model"><strong>P4 / T110</strong><span>Classe de velocidade de 110 km/h</span></div>
+          </div>
+          <ul class="feature-list">
+            <li><i data-lucide="check" aria-hidden="true"></i><span>Compatível com defensas metálicas e barreiras rígidas de concreto.</span></li>
+            <li><i data-lucide="check" aria-hidden="true"></i><span>Sistema simétrico para instalação upstream e downstream.</span></li>
+            <li><i data-lucide="check" aria-hidden="true"></i><span>Projeto conforme EN 1317 e ABNT NBR 15486.</span></li>
+          </ul>
+          <a class="btn btn--signal js-wa" href="https://wa.me/5511933989839" data-cta="terminal_model" data-message="Olá, gostaria de confirmar se o Terminal P2 ou P4 é adequado ao meu projeto."><i data-lucide="messages-square" aria-hidden="true"></i> Confirmar o modelo adequado</a>
+          <div class="partner">
+            <img src="assets/voestalpine-logo.png" alt="Voestalpine" width="300" height="74" loading="lazy">
+            <span>Tecnologia Voestalpine com fabricação licenciada pela JMafer.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="field-story" aria-labelledby="field-story-title">
+      <img src="assets/tae-highway-v3.png" alt="Terminal absorvedor instalado no início de uma defensa metálica em rodovia" width="1672" height="941" loading="lazy">
+      <div class="container field-story__copy">
+        <p class="eyebrow">Onde a margem de erro termina</p>
+        <h2 id="field-story-title">Projetado para o ponto mais crítico da trajetória.</h2>
+        <p>Uma solução de segurança só cumpre seu papel quando produto, instalação e especificação funcionam como um único sistema.</p>
+      </div>
+    </section>
+
+    <section class="section capability" id="diferenciais">
+      <div class="container">
+        <div class="capability__head">
+          <div>
+            <p class="eyebrow">Por que especificar JMafer</p>
+            <h2 class="section-title">Suporte técnico e documental do orçamento à entrega.</h2>
+          </div>
+          <p>Da matéria-prima ao suporte comercial, uma estrutura pensada para reduzir incertezas de engenharia, suprimentos e fiscalização.</p>
+        </div>
+        <div class="capability-grid">
+          <article class="capability-item"><i data-lucide="microscope" aria-hidden="true"></i><h3>Laboratório próprio</h3><p>Estrutura de análise e ensaios para apoiar o controle da qualidade dos produtos.</p></article>
+          <article class="capability-item"><i data-lucide="file-badge" aria-hidden="true"></i><h3>Documentação técnica</h3><p>Fichas, certificados e classificações para apoiar decisões e aprovações.</p></article>
+          <article class="capability-item"><i data-lucide="factory" aria-hidden="true"></i><h3>Fabricação nacional</h3><p>Processos industriais e equipe técnica para projetos de diferentes escalas.</p></article>
+          <article class="capability-item"><i data-lucide="map" aria-hidden="true"></i><h3>Atendimento nacional</h3><p>Análise comercial e logística para obras em diferentes regiões do Brasil.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process">
+      <div class="container">
+        <div class="process__head">
+          <div><p class="eyebrow">Da especificação ao fornecimento</p><h2 class="section-title">Envie o que já tem. A equipe organiza o que falta.</h2></div>
+          <p>Comece com o que você já tem. Projeto, memorial, planilha ou apenas os dados básicos do trecho ajudam a equipe a orientar o próximo passo.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step"><h3>Envie a demanda</h3><p>Compartilhe produto, quantidade, local e prazo pelo formulário ou WhatsApp.</p></article>
+          <article class="process-step"><h3>Análise técnica</h3><p>A equipe verifica a aplicação, os requisitos e as informações necessárias.</p></article>
+          <article class="process-step"><h3>Proposta comercial</h3><p>Você recebe a composição de fornecimento e a documentação aplicável.</p></article>
+          <article class="process-step"><h3>Produção e entrega</h3><p>Após a aprovação, o pedido segue para programação e acompanhamento logístico.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote" id="orcamento">
+      <div class="quote__shell">
+        <div class="container quote__grid">
+          <div class="quote__intro">
+            <p class="eyebrow">Solicite uma análise</p>
+            <h2 class="section-title">Receba uma análise inicial para o seu projeto.</h2>
+            <p>Leva cerca de dois minutos. Ao concluir, você revisa a solicitação organizada no WhatsApp antes de enviar.</p>
+            <div class="quote__channels">
+              <span class="quote__channel"><i data-lucide="message-circle" aria-hidden="true"></i> WhatsApp: +55 11 93398-9839</span>
+              <span class="quote__channel"><i data-lucide="mail" aria-hidden="true"></i> contato@jmafer.com.br</span>
+              <span class="quote__channel"><i data-lucide="map-pin" aria-hidden="true"></i> Guarulhos/SP e Extrema/MG</span>
+            </div>
+          </div>
+
+          <form class="form" id="lead-form">
+            <h3>Comece pela necessidade do projeto</h3>
+            <p class="form__note">A solução e o tipo de compra ajudam a direcionar o atendimento. Campos com * são obrigatórios.</p>
+            <div class="form-grid">
+              <div class="field"><label for="product">Solução de interesse *</label><select id="product" name="product" required><option value="">Selecione</option><option>Defensa certificada</option><option>Defensa semimaleável</option><option>Terminal absorvedor P2 / T80</option><option>Terminal absorvedor P4 / T110</option><option>Ainda preciso de orientação</option></select></div>
+              <div class="field"><label for="purchase">Tipo de compra</label><select id="purchase" name="purchase"><option>Compra direta</option><option>Licitação</option><option>Orçamento para projeto</option><option>Reposição ou manutenção</option></select></div>
+              <div class="field"><label for="name">Nome *</label><input id="name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="company">Empresa ou órgão *</label><input id="company" name="company" autocomplete="organization" required></div>
+              <div class="field"><label for="phone">WhatsApp *</label><input id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" data-phone required></div>
+              <div class="field"><label for="state">UF da entrega *</label><select id="state" name="state" required><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div>
+              <div class="field field--full"><label for="details">Quantidade, prazo e detalhes</label><textarea id="details" name="details" placeholder="Ex.: 1.200 metros de defensa, entrega em Goiás, necessidade para setembro."></textarea></div>
+              <label class="consent" for="consent"><input id="consent" name="consent" type="checkbox" required><span>Concordo em enviar estes dados à JMafer para atendimento desta solicitação.</span></label>
+              <div class="field field--full"><button class="btn btn--signal" type="submit"><i data-lucide="send" aria-hidden="true"></i> Abrir solicitação no WhatsApp</button><span class="cta-note"><i data-lucide="shield-check" aria-hidden="true"></i> Você revisa a mensagem antes de enviar.</span><p class="form-feedback" id="form-feedback" aria-live="polite"></p></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="duvidas">
+      <div class="container faq__grid">
+        <div><p class="eyebrow">Dúvidas frequentes</p><h2 class="section-title">Informação para decidir com segurança.</h2></div>
+        <div class="faq-list">
+          <details><summary>Qual a diferença entre defensa semimaleável e certificada?</summary><p>A seleção depende da especificação do projeto. Sistemas certificados possuem desempenho classificado a partir de ensaios, incluindo nível de contenção, severidade e largura de trabalho.</p></details>
+          <details><summary>Como escolher entre o terminal P2 e o P4?</summary><p>Os modelos atendem classes de velocidade diferentes: P2/T80 para 80 km/h e P4/T110 para 110 km/h. A aplicação também depende da geometria e da barreira conectada.</p></details>
+          <details><summary>A JMafer atende obras fora de São Paulo?</summary><p>Sim. A linha de segurança viária possui atendimento nacional, com análise logística conforme volume, destino e cronograma da obra.</p></details>
+          <details><summary>É possível enviar planilha, projeto ou memorial?</summary><p>Sim. Depois de iniciar o atendimento pelo WhatsApp, você pode anexar PDF, planilha, imagem ou documento técnico para análise da equipe.</p></details>
+          <details><summary>Quais informações aceleram a cotação?</summary><p>Produto ou especificação, quantidade, local de entrega, prazo, nível de contenção quando aplicável e tipo de compra.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container final-cta__inner">
+        <h2>Seu projeto começa com a <span>especificação certa.</span></h2>
+        <div class="final-cta__action">
+          <a class="btn btn--dark js-wa" href="https://wa.me/5511933989839" data-cta="final_analysis" data-message="Olá, gostaria de falar com a equipe JMafer sobre um projeto de segurança viária."><i data-lucide="message-circle" aria-hidden="true"></i> Solicitar análise técnica</a>
+          <span class="cta-note">Sem compromisso. Continue pelo WhatsApp.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div><img class="footer__brand" src="assets/jmafer-logo-compact.png" alt="JMafer" width="900" height="259"></div>
+      <div><h3>Fábrica e escritório</h3><p>Cidade Industrial Satélite Cumbica<br>Guarulhos/SP</p></div>
+      <div><h3>Contato</h3><p><a href="tel:+551121788500">+55 11 2178-8500</a><br><a href="mailto:contato@jmafer.com.br">contato@jmafer.com.br</a><br><span id="copyright"></span></p></div>
+    </div>
+  </footer>
+
+  <a class="sticky-wa js-wa" href="https://wa.me/5511933989839" data-cta="sticky_whatsapp" data-message="Olá, vim pela página de defensas metálicas e gostaria de atendimento." aria-label="Falar com a JMafer pelo WhatsApp"><i data-lucide="message-circle" aria-hidden="true"></i></a>
+
+  <dialog class="lead-gate" id="lead-gate" aria-labelledby="lead-gate-title">
+    <form class="lead-gate__form" id="lead-gate-form">
+      <div class="lead-gate__head">
+        <div>
+          <p class="eyebrow">Antes de abrir o WhatsApp</p>
+          <h2 id="lead-gate-title">Conte em que momento está sua demanda.</h2>
+        </div>
+        <button class="lead-gate__close" type="button" aria-label="Fechar formulário"><i data-lucide="x" aria-hidden="true"></i></button>
+      </div>
+      <p class="lead-gate__intro">Comece pela etapa da demanda. Depois, deixe três dados de contato para a equipe assumir a conversa certa.</p>
+      <div class="lead-gate__fields">
+        <div class="field field--wide">
+          <label for="gate-stage">Em que etapa está a demanda? *</label>
+          <select id="gate-stage" name="stage" required>
+            <option value="">Selecione</option>
+            <option>Preciso de cotação agora</option>
+            <option>Estou especificando ou projetando</option>
+            <option>Estou preparando ou participando de licitação</option>
+            <option>É uma reposição ou manutenção</option>
+            <option>Estou em pesquisa inicial</option>
+          </select>
+        </div>
+        <div class="field"><label for="gate-name">Nome *</label><input id="gate-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="gate-phone">WhatsApp *</label><input id="gate-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" data-phone required></div>
+        <div class="field field--wide"><label for="gate-email">E-mail *</label><input id="gate-email" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com.br" required></div>
+        <label class="consent field--wide" for="gate-consent"><input id="gate-consent" name="consent" type="checkbox" required><span>Concordo em enviar estes dados à JMafer para atendimento da solicitação.</span></label>
+        <button class="btn btn--signal lead-gate__submit" type="submit"><i data-lucide="message-circle" aria-hidden="true"></i> Abrir solicitação no WhatsApp</button>
+        <p class="lead-gate__privacy">Você revisa a mensagem antes de enviar. Seus dados serão usados exclusivamente neste atendimento.</p>
+      </div>
+    </form>
+  </dialog>
+
+  <script>
+    const phone = "5511933989839";
+    const menuButton = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav");
+    const leadGate = document.getElementById("lead-gate");
+    const leadGateForm = document.getElementById("lead-gate-form");
+    const quoteForm = document.getElementById("lead-form");
+    let pendingWhatsAppMessage = "Olá, gostaria de falar com a JMafer.";
+    let pendingCtaSource = "direct";
+
+    function track(event, data = {}) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event, page_segment: "defensas", ...data });
+    }
+
+    function validatePhone(input) {
+      const digits = input.value.replace(/\D/g, "");
+      const valid = digits.length >= 10 && digits.length <= 13;
+      input.setCustomValidity(valid ? "" : "Informe um WhatsApp com DDD válido.");
+      return valid;
+    }
+
+    document.querySelectorAll("[data-phone]").forEach((input) => {
+      input.addEventListener("input", () => validatePhone(input));
+      input.addEventListener("blur", () => validatePhone(input));
+      input.addEventListener("invalid", () => {
+        track(input.id === "gate-phone" ? "lead_gate_validation_error" : "quote_form_validation_error", {
+          ...(input.id === "gate-phone" ? { cta_source: pendingCtaSource } : {}),
+          field: "phone"
+        });
+      });
+    });
+
+    menuButton.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      document.body.classList.toggle("menu-open", open);
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+    });
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("is-open");
+        document.body.classList.remove("menu-open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    function campaignContext() {
+      const params = new URLSearchParams(window.location.search);
+      const keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid"];
+      const parts = keys.filter((key) => params.get(key)).map((key) => `${key}: ${params.get(key)}`);
+      return parts.length ? `\n\nOrigem da visita:\n${parts.join("\n")}` : "";
+    }
+
+    function whatsappUrl(message) {
+      return `https://wa.me/${phone}?text=${encodeURIComponent(message + campaignContext())}`;
+    }
+
+    document.querySelector('[data-cta="nav_quote"]').addEventListener("click", () => {
+      track("quote_cta_click", { cta_source: "nav_quote" });
+    });
+
+    leadGateForm.addEventListener("focusin", () => {
+      track("lead_gate_start", { cta_source: pendingCtaSource });
+    }, { once: true });
+
+    quoteForm.addEventListener("focusin", () => {
+      track("quote_form_start", { cta_source: "full_form" });
+    }, { once: true });
+
+    document.querySelectorAll(".js-wa").forEach((link) => {
+      link.href = "#lead-gate";
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        pendingWhatsAppMessage = link.dataset.message || "Olá, gostaria de falar com a JMafer.";
+        pendingCtaSource = link.dataset.cta || "direct";
+        track("lead_gate_open", { cta_source: pendingCtaSource });
+        if (typeof leadGate.showModal === "function") leadGate.showModal();
+        else leadGate.setAttribute("open", "");
+      });
+    });
+
+    function closeLeadGate(reason) {
+      track("lead_gate_close", {
+        cta_source: pendingCtaSource,
+        close_reason: reason,
+        demand_stage_selected: Boolean(document.getElementById("gate-stage").value)
+      });
+      leadGate.close();
+    }
+
+    document.querySelector(".lead-gate__close").addEventListener("click", () => closeLeadGate("button"));
+    leadGate.addEventListener("click", (event) => {
+      if (event.target === leadGate) closeLeadGate("backdrop");
+    });
+    leadGate.addEventListener("cancel", (event) => {
+      event.preventDefault();
+      closeLeadGate("escape");
+    });
+
+    leadGateForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const phoneInput = document.getElementById("gate-phone");
+      if (!validatePhone(phoneInput)) {
+        phoneInput.reportValidity();
+        track("lead_gate_validation_error", { cta_source: pendingCtaSource, field: "phone" });
+        return;
+      }
+      const form = new FormData(leadGateForm);
+      const message = [
+        pendingWhatsAppMessage, "",
+        "Dados para direcionamento:",
+        `Nome: ${form.get("name")}`,
+        `WhatsApp: ${form.get("phone")}`,
+        `E-mail: ${form.get("email")}`,
+        `Etapa da demanda: ${form.get("stage")}`
+      ].join("\n");
+
+      track("pre_redirect_form_submit", { cta_source: pendingCtaSource, demand_stage: form.get("stage") });
+      track("whatsapp_redirect", { cta_source: pendingCtaSource, form_type: "pre_redirect", demand_stage: form.get("stage") });
+      window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
+      leadGate.close();
+      leadGateForm.reset();
+    });
+
+    quoteForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const phoneInput = document.getElementById("phone");
+      if (!validatePhone(phoneInput)) {
+        phoneInput.reportValidity();
+        track("quote_form_validation_error", { field: "phone" });
+        return;
+      }
+      const form = new FormData(event.currentTarget);
+      const message = [
+        "Olá, gostaria de solicitar uma análise de segurança viária.", "",
+        `Nome: ${form.get("name")}`,
+        `Empresa/órgão: ${form.get("company")}`,
+        `Meu WhatsApp: ${form.get("phone")}`,
+        `UF da entrega: ${form.get("state")}`,
+        `Solução: ${form.get("product")}`,
+        `Tipo de compra: ${form.get("purchase")}`,
+        `Detalhes: ${form.get("details") || "A informar"}`
+      ].join("\n");
+
+      track("lead_form_submit", { cta_source: "full_form", product: form.get("product"), purchase_type: form.get("purchase") });
+      track("whatsapp_redirect", { cta_source: "full_form", form_type: "full", product: form.get("product") });
+      document.getElementById("form-feedback").textContent = "Solicitação organizada. Abrindo o WhatsApp...";
+      window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
+    });
+
+    document.getElementById("copyright").textContent = `© ${new Date().getFullYear()} JMafer`;
+    window.addEventListener("DOMContentLoaded", () => {
+      if (window.lucide) window.lucide.createIcons({ attrs: { "stroke-width": 2 } });
+    });
+  </script>
+</body>
+</html>
