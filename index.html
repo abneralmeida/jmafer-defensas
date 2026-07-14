@@ -302,6 +302,24 @@
     .field-story__copy h2 { max-width: 900px; margin: 0; font-family: "Galgo", "Arial Narrow", sans-serif; font-size: 118px; line-height: .9; font-weight: 700; text-transform: uppercase; text-shadow: 0 3px 26px rgba(0,0,0,.42); text-wrap: balance; }
     .field-story__copy p { max-width: 520px; margin: 24px 0 0; color: #e2e9f1; font-size: 16px; text-shadow: 0 2px 18px rgba(0,0,0,.5); }
 
+    .heritage { overflow: hidden; background: var(--white); }
+    .heritage__grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 88px; align-items: start; }
+    .heritage__origin { position: sticky; top: 30px; padding: 34px 0 30px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+    .heritage__origin > span { display: block; color: var(--blue); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .heritage__origin strong { display: block; margin-top: 22px; color: var(--blue); font-family: "Galgo", "Arial Narrow", sans-serif; font-size: 196px; line-height: .82; font-weight: 700; }
+    .heritage__origin small { display: block; margin-top: 20px; color: var(--muted); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+    .heritage__story .section-title { max-width: 760px; font-size: 106px; }
+    .heritage__story > .section-lead { max-width: 690px; }
+    .heritage__facts { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 58px; border-top: 1px solid var(--ink); }
+    .heritage__fact { min-height: 178px; padding: 24px 22px 20px 0; border-right: 1px solid var(--line); }
+    .heritage__fact + .heritage__fact { padding-left: 22px; }
+    .heritage__fact:last-child { border-right: 0; }
+    .heritage__fact svg { width: 24px; height: 24px; color: var(--green); }
+    .heritage__fact strong { display: block; margin-top: 34px; font-size: 16px; }
+    .heritage__fact span { display: block; margin-top: 8px; color: var(--muted); font-size: 12px; }
+    .heritage__source { display: flex; align-items: center; gap: 10px; margin: 25px 0 0; color: var(--muted); font-size: 11px; }
+    .heritage__source svg { width: 16px; height: 16px; flex: 0 0 auto; color: var(--blue); }
+
     .capability { background: var(--signal); }
     .capability__head { display: grid; grid-template-columns: 1.2fr .8fr; gap: 80px; align-items: end; }
     .capability .eyebrow { color: var(--ink); }
@@ -411,6 +429,8 @@
       .hero__spec div:last-child { display: none; }
       .manifesto__copy .section-title { font-size: 90px; }
       .terminal__copy .section-title { font-size: 78px; }
+      .heritage__story .section-title { font-size: 88px; }
+      .heritage__origin strong { font-size: 158px; }
       .quote .section-title { font-size: 82px; }
       .faq .section-title { font-size: 76px; }
       .terminal__grid { gap: 36px; }
@@ -442,7 +462,7 @@
       .proof-rail__inner { grid-template-columns: repeat(2, 1fr); }
       .proof-rail__label { display: none; }
       .proof-chip { min-height: 76px; padding: 15px; border-bottom: 1px solid var(--line); }
-      .terminal__grid, .capability__head, .process__head, .quote__grid, .faq__grid { grid-template-columns: 1fr; }
+      .terminal__grid, .heritage__grid, .capability__head, .process__head, .quote__grid, .faq__grid { grid-template-columns: 1fr; }
       .manifesto__copy { margin-left: 0; }
       .manifesto__copy .section-title { font-size: 80px; }
       .specifier-line { grid-template-columns: repeat(2, 1fr); }
@@ -453,6 +473,13 @@
       .terminal__visual { min-height: 460px; order: 2; }
       .terminal__visual img { inset: 0; width: 100%; }
       .terminal__copy { order: 1; }
+      .heritage__grid { gap: 52px; }
+      .heritage__origin { position: static; display: grid; grid-template-columns: auto 1fr; column-gap: 24px; align-items: end; padding: 26px 0; }
+      .heritage__origin > span, .heritage__origin small { grid-column: 2; }
+      .heritage__origin > span { align-self: end; }
+      .heritage__origin strong { grid-column: 1; grid-row: 1 / span 2; margin: 0; font-size: 142px; }
+      .heritage__origin small { margin-top: 4px; align-self: start; }
+      .heritage__story .section-title { font-size: 80px; }
       .capability-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
       .quote__grid { gap: 44px; padding: 70px 0; }
       .final-cta__inner { min-height: 330px; grid-template-columns: 1fr; gap: 32px; padding: 70px 0; }
@@ -500,6 +527,14 @@
       .field-story__copy { align-items: flex-start; justify-content: flex-end; padding-bottom: 42px; text-align: left; }
       .field-story__copy h2 { max-width: 340px; font-size: 66px; }
       .field-story__copy p { max-width: 320px; font-size: 14px; }
+      .heritage__grid { gap: 38px; }
+      .heritage__origin { grid-template-columns: auto 1fr; column-gap: 17px; }
+      .heritage__origin strong { font-size: 104px; }
+      .heritage__story .section-title { font-size: 66px; }
+      .heritage__facts { grid-template-columns: 1fr; margin-top: 42px; }
+      .heritage__fact { min-height: 142px; padding: 22px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .heritage__fact + .heritage__fact { padding-left: 0; }
+      .heritage__fact strong { margin-top: 22px; }
       .models { margin-top: 28px; }
       .model strong { font-size: 36px; }
       .partner { align-items: flex-start; flex-direction: column; }
@@ -545,7 +580,7 @@
             <a href="#solucoes">Soluções</a>
             <a href="#terminais">Terminais P2 e P4</a>
             <a href="#diferenciais">Engenharia</a>
-            <a href="#duvidas">Dúvidas</a>
+            <a href="#jmafer">A JMafer</a>
             <a class="btn btn--signal" href="#orcamento" data-cta="nav_quote"><i data-lucide="file-check-2" aria-hidden="true"></i> Solicitar análise técnica</a>
           </nav>
         </header>
@@ -665,6 +700,27 @@
         <p class="eyebrow">Onde a margem de erro termina</p>
         <h2 id="field-story-title">Projetado para o ponto mais crítico da trajetória.</h2>
         <p>Uma solução de segurança só cumpre seu papel quando produto, instalação e especificação funcionam como um único sistema.</p>
+      </div>
+    </section>
+
+    <section class="section heritage" id="jmafer" aria-labelledby="heritage-title">
+      <div class="container heritage__grid">
+        <div class="heritage__origin" aria-label="JMafer, desde 1972 em Guarulhos, São Paulo">
+          <span>Início das atividades</span>
+          <strong>1972</strong>
+          <small>Guarulhos / São Paulo</small>
+        </div>
+        <div class="heritage__story">
+          <p class="eyebrow">A indústria por trás da solução</p>
+          <h2 class="section-title" id="heritage-title">Mais de cinco décadas transformando aço em infraestrutura.</h2>
+          <p class="section-lead">A JMafer nasceu como distribuidora de aços para construção e tubos. Hoje reúne fabricação, engenharia e distribuição de produtos industrializados de aço, com atuação em segurança viária e presença operacional em São Paulo e Minas Gerais.</p>
+          <div class="heritage__facts" aria-label="Provas institucionais JMafer">
+            <article class="heritage__fact"><i data-lucide="factory" aria-hidden="true"></i><strong>Fábrica e escritório</strong><span>Operação industrial e atendimento técnico em Guarulhos/SP.</span></article>
+            <article class="heritage__fact"><i data-lucide="warehouse" aria-hidden="true"></i><strong>Centro de distribuição</strong><span>Base logística em Extrema/MG para apoiar o fornecimento.</span></article>
+            <article class="heritage__fact"><i data-lucide="badge-check" aria-hidden="true"></i><strong>Produção ISO 9001</strong><span>Gestão da qualidade aplicada aos processos de fabricação.</span></article>
+          </div>
+          <p class="heritage__source"><i data-lucide="file-check-2" aria-hidden="true"></i> História, endereços e certificação conforme canais institucionais da JMafer.</p>
+        </div>
       </div>
     </section>
 
