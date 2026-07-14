@@ -250,6 +250,24 @@
     .proof-chip strong { display: block; font-size: 13px; line-height: 1.25; }
     .proof-chip span { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; text-transform: uppercase; }
 
+    .impact-proof { padding: 96px 0; overflow: hidden; background: var(--ink); color: var(--white); }
+    .impact-proof__grid { display: grid; grid-template-columns: .68fr 1.32fr; gap: 72px; align-items: center; }
+    .impact-proof .eyebrow { color: var(--signal); }
+    .impact-proof__copy h2 { margin: 0; max-width: 520px; font-family: "Galgo", "Arial Narrow", sans-serif; font-size: 88px; line-height: .92; font-weight: 700; text-transform: uppercase; text-wrap: balance; }
+    .impact-proof__copy p { max-width: 480px; margin: 26px 0 0; color: #c8d2dc; font-size: 17px; }
+    .impact-video { margin: 0; }
+    .impact-video__frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--radius); background: #02070d; }
+    .impact-video__poster { position: relative; width: 100%; height: 100%; display: block; padding: 0; border: 0; background: #02070d; cursor: pointer; }
+    .impact-video__poster::after { content: ""; position: absolute; inset: 0; background: rgba(2,10,18,.2); transition: background 180ms ease; }
+    .impact-video__poster:hover::after { background: rgba(2,10,18,.08); }
+    .impact-video__poster > img { width: 100%; height: 100%; object-fit: cover; }
+    .impact-video__play { position: absolute; z-index: 2; top: 50%; left: 50%; width: 76px; height: 76px; display: grid; place-items: center; border-radius: 50%; background: var(--signal); color: var(--ink); box-shadow: 0 18px 45px rgba(0,0,0,.32); transform: translate(-50%, -50%); transition: transform 180ms ease, background 180ms ease; }
+    .impact-video__poster:hover .impact-video__play { background: #ffe064; transform: translate(-50%, -50%) scale(1.06); }
+    .impact-video__play svg { width: 30px; height: 30px; margin-left: 3px; }
+    .impact-video iframe { width: 100%; height: 100%; display: block; border: 0; }
+    .impact-video figcaption { display: flex; justify-content: space-between; gap: 24px; margin-top: 14px; color: #aebbc8; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+    .impact-video figcaption span:first-child { color: var(--signal); }
+
     .manifesto { background: var(--paper); }
     .manifesto__grid { display: block; }
     .manifesto__copy { max-width: 1100px; margin-left: auto; }
@@ -462,6 +480,9 @@
       .proof-rail__inner { grid-template-columns: repeat(2, 1fr); }
       .proof-rail__label { display: none; }
       .proof-chip { min-height: 76px; padding: 15px; border-bottom: 1px solid var(--line); }
+      .impact-proof__grid { grid-template-columns: 1fr; gap: 42px; }
+      .impact-proof__copy h2 { max-width: 700px; font-size: 80px; }
+      .impact-proof__copy p { max-width: 620px; }
       .terminal__grid, .heritage__grid, .capability__head, .process__head, .quote__grid, .faq__grid { grid-template-columns: 1fr; }
       .manifesto__copy { margin-left: 0; }
       .manifesto__copy .section-title { font-size: 80px; }
@@ -513,6 +534,13 @@
       .proof-chip:nth-child(n+4) { border-bottom: 0; }
       .proof-chip strong { font-size: 11px; }
       .proof-chip span { font-size: 8px; }
+      .impact-proof { padding: 72px 0; }
+      .impact-proof__grid { gap: 30px; }
+      .impact-proof__copy h2 { font-size: 66px; }
+      .impact-proof__copy p { margin-top: 20px; font-size: 16px; }
+      .impact-video__play { width: 62px; height: 62px; }
+      .impact-video__play svg { width: 25px; height: 25px; }
+      .impact-video figcaption { align-items: flex-start; flex-direction: column; gap: 3px; font-size: 9px; }
       .manifesto__copy .section-title { font-size: 68px; }
       .manifesto__copy > p { font-size: 17px; }
       .specifier-line { margin-top: 42px; }
@@ -648,6 +676,25 @@
         <div class="proof-chip"><i data-lucide="shield-check" aria-hidden="true"></i><div><strong>EN 1317</strong><span>Referência de desempenho</span></div></div>
         <div class="proof-chip"><i data-lucide="award" aria-hidden="true"></i><div><strong>ISO 9001:2015</strong><span>Gestão da qualidade</span></div></div>
         <div class="proof-chip"><i data-lucide="truck" aria-hidden="true"></i><div><strong>Atendimento nacional</strong><span>Obras em todo o Brasil</span></div></div>
+      </div>
+    </section>
+
+    <section class="impact-proof" id="ensaio" aria-labelledby="impact-proof-title">
+      <div class="container impact-proof__grid">
+        <div class="impact-proof__copy">
+          <p class="eyebrow">Ensaio de impacto / EN 1317-4</p>
+          <h2 id="impact-proof-title">Veja como o terminal responde à colisão.</h2>
+          <p>Assista ao teste de impacto publicado em nosso canal e observe o comportamento do sistema durante o ensaio.</p>
+        </div>
+        <figure class="impact-video">
+          <div class="impact-video__frame">
+            <button class="impact-video__poster" type="button" data-video-id="CXsS9ImIBtM" aria-label="Reproduzir teste de impacto do terminal absorvedor de energia">
+              <img src="assets/impact-test-terminal.jpg" alt="Veículo durante ensaio de impacto contra um terminal absorvedor de energia" width="1280" height="720">
+              <span class="impact-video__play"><i data-lucide="play" aria-hidden="true"></i></span>
+            </button>
+          </div>
+          <figcaption><span>Vídeo oficial JMafer</span><span>Teste de impacto do terminal absorvedor / EN 1317-4</span></figcaption>
+        </figure>
       </div>
     </section>
 
@@ -948,6 +995,20 @@
 
     document.querySelector('[data-cta="nav_quote"]').addEventListener("click", () => {
       track("quote_cta_click", { cta_source: "nav_quote" });
+    });
+
+    document.querySelectorAll("[data-video-id]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const videoId = button.dataset.videoId;
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+        iframe.title = "Teste de Impacto Terminal Absorvedor de Energia – EN1317-4 | JMafer";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.allowFullscreen = true;
+        button.parentElement.replaceChildren(iframe);
+        track("impact_video_play", { video_id: videoId, video_position: "after_proof_rail" });
+      }, { once: true });
     });
 
     leadGateForm.addEventListener("focusin", () => {
