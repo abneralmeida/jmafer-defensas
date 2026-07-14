@@ -106,8 +106,8 @@
     .hero-shell { padding: 10px 10px 0; background: var(--paper); }
     .hero {
       position: relative;
-      height: min(850px, calc(100svh - 44px));
-      min-height: 720px;
+      height: min(850px, calc(100svh - 112px));
+      min-height: 560px;
       overflow: hidden;
       border-radius: var(--radius);
       background: var(--sky);
@@ -446,7 +446,7 @@
       .section { padding: 84px 0; }
       .section-title { font-size: 76px; }
       .hero-shell { padding: 6px 6px 0; }
-      .hero { height: 820px; min-height: 0; }
+      .hero { height: min(820px, calc(100svh - 100px)); min-height: 680px; }
       .hero__header { height: 72px; }
       .brand { width: 170px; }
       .menu-toggle { display: inline-flex; }
@@ -500,7 +500,7 @@
       .section { padding: 72px 0; }
       .section-title { font-size: 64px; }
       .section-lead { font-size: 16px; }
-      .hero { height: 780px; }
+      .hero { height: min(720px, calc(100svh - 88px)); min-height: 580px; }
       .hero__header { height: 66px; }
       .brand { width: 148px; }
       .hero__intro { top: 238px; right: 18px; left: auto; width: 230px; text-align: right; }
@@ -582,6 +582,14 @@
       .section-title, .manifesto__copy .section-title, .terminal__copy .section-title, .heritage__story .section-title, .quote .section-title, .faq .section-title { font-size: 58px; }
       .field-story__copy h2 { font-size: 58px; }
       .final-cta h2 { font-size: 62px; }
+    }
+
+    @media (max-width: 560px) and (max-height: 620px) {
+      .hero { height: calc(100svh + 80px); min-height: 0; }
+    }
+
+    @media (min-width: 861px) and (max-height: 640px) {
+      .hero { height: calc(100svh + 72px); min-height: 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
