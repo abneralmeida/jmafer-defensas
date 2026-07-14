@@ -159,6 +159,9 @@
       cursor: pointer;
     }
     .menu-toggle svg { width: 22px; height: 22px; }
+    .menu-toggle__close { display: none; }
+    .menu-toggle[aria-expanded="true"] .menu-toggle__open { display: none; }
+    .menu-toggle[aria-expanded="true"] .menu-toggle__close { display: block; }
     .hero__intro {
       position: absolute;
       z-index: 4;
@@ -467,6 +470,7 @@
       .manifesto__copy .section-title { font-size: 80px; }
       .specifier-line { grid-template-columns: repeat(2, 1fr); }
       .solutions__head { align-items: start; flex-direction: column; padding: 84px 0 52px; gap: 30px; }
+      .solutions__head > div:first-child { flex: 0 1 auto; }
       .solution-row { grid-template-columns: 50px 1fr auto; min-height: 160px; }
       .solution-row p { grid-column: 2 / 3; }
       .solution-row a { grid-column: 3; grid-row: 1 / span 2; }
@@ -480,8 +484,10 @@
       .heritage__origin strong { grid-column: 1; grid-row: 1 / span 2; margin: 0; font-size: 142px; }
       .heritage__origin small { margin-top: 4px; align-self: start; }
       .heritage__story .section-title { font-size: 80px; }
+      .capability__head, .process__head { gap: 34px; }
       .capability-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
       .quote__grid { gap: 44px; padding: 70px 0; }
+      .faq__grid { gap: 44px; }
       .final-cta__inner { min-height: 330px; grid-template-columns: 1fr; gap: 32px; padding: 70px 0; }
       .terminal__copy .section-title { font-size: 72px; }
       .quote .section-title { font-size: 76px; }
@@ -505,19 +511,27 @@
       .hero__action { left: 18px; right: 18px; bottom: 18px; width: auto; }
       .hero__action p { display: none; }
       .proof-rail__inner { width: 100%; grid-template-columns: 1fr 1fr; }
-      .proof-chip { padding: 13px 10px; }
+      .proof-chip { padding: 13px 12px; border-right: 0; }
+      .proof-chip:nth-child(even) { border-right: 1px solid var(--line); }
+      .proof-chip:nth-child(n+4) { border-bottom: 0; }
       .proof-chip strong { font-size: 11px; }
       .proof-chip span { font-size: 8px; }
       .manifesto__copy .section-title { font-size: 68px; }
       .manifesto__copy > p { font-size: 17px; }
       .specifier-line { margin-top: 42px; }
-      .specifier-line div { min-height: 104px; }
+      .specifier-line div { min-height: 104px; padding: 18px 14px 14px 0; border-right: 0; }
+      .specifier-line div + div { padding-left: 0; }
+      .specifier-line div:nth-child(odd) { border-right: 1px solid var(--line); }
+      .specifier-line div:nth-child(even) { padding-left: 14px; }
+      .specifier-line div:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .specifier-line strong { margin-top: 16px; }
       .solutions__head { padding: 72px 0 44px; gap: 24px; }
-      .solution-row { grid-template-columns: 36px 1fr 42px; gap: 12px; padding: 24px 0; }
+      .solution-row { grid-template-columns: 1fr 42px; gap: 10px 16px; padding: 28px 0; }
       .solution-row:hover { padding-inline: 8px; }
-      .solution-row h3 { font-size: 44px; }
-      .solution-row p { font-size: 12px; }
-      .solution-row a { width: 42px; height: 42px; }
+      .solution-row__index { grid-column: 1; grid-row: 1; }
+      .solution-row h3 { grid-column: 1; grid-row: 2; font-size: 44px; }
+      .solution-row p { grid-column: 1; grid-row: 3; font-size: 12px; }
+      .solution-row a { grid-column: 2; grid-row: 1 / span 3; align-self: center; width: 42px; height: 42px; }
       .terminal__copy .section-title { font-size: 66px; }
       .terminal__visual { min-height: 300px; }
       .terminal__visual::before { font-size: 104px; }
@@ -539,6 +553,7 @@
       .model strong { font-size: 36px; }
       .partner { align-items: flex-start; flex-direction: column; }
       .capability-grid, .process-grid { grid-template-columns: 1fr; }
+      .capability__head, .process__head { gap: 28px; }
       .capability-item, .process-step { min-height: 185px; border-right: 0; border-bottom: 1px solid rgba(10,21,33,.28); }
       .capability-item + .capability-item, .process-step + .process-step { padding-left: 0; }
       .capability-item h3, .process-step h3 { margin-top: 32px; }
@@ -548,14 +563,25 @@
       .form-grid { grid-template-columns: 1fr; }
       .field--full, .consent { grid-column: auto; }
       .faq .section-title { font-size: 64px; }
+      .faq__grid { gap: 34px; }
       .final-cta h2 { font-size: 72px; }
       .final-cta .btn { width: 100%; }
       .footer__grid { grid-template-columns: 1fr; gap: 30px; }
-      .sticky-wa { right: 14px; bottom: 14px; width: 52px; height: 52px; }
+      .sticky-wa { display: none; }
       .lead-gate__form { padding: 26px 20px 22px; }
       .lead-gate__head h2 { font-size: 34px; }
       .lead-gate__fields { grid-template-columns: 1fr; }
       .lead-gate .field--wide, .lead-gate__submit, .lead-gate__privacy { grid-column: auto; }
+    }
+
+    @media (max-width: 340px) {
+      .proof-rail__inner { grid-template-columns: 1fr; }
+      .proof-chip, .proof-chip:nth-child(even) { border-right: 0; border-bottom: 1px solid var(--line); }
+      .proof-chip:last-child { border-bottom: 0; }
+      .hero__title { width: 290px; font-size: 88px; }
+      .section-title, .manifesto__copy .section-title, .terminal__copy .section-title, .heritage__story .section-title, .quote .section-title, .faq .section-title { font-size: 58px; }
+      .field-story__copy h2 { font-size: 58px; }
+      .final-cta h2 { font-size: 62px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -574,7 +600,8 @@
             <img src="assets/jmafer-logo-compact.png" alt="JMafer - Qualidade e Tecnologia" width="900" height="259">
           </a>
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
-            <i data-lucide="menu" aria-hidden="true"></i>
+            <i class="menu-toggle__open" data-lucide="menu" aria-hidden="true"></i>
+            <i class="menu-toggle__close" data-lucide="x" aria-hidden="true"></i>
           </button>
           <nav class="nav" id="main-nav" aria-label="Navegação principal">
             <a href="#solucoes">Soluções</a>
