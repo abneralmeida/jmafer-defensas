@@ -309,6 +309,27 @@
     .solution__action { width: 54px; height: 54px; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; text-decoration: none; }
     .solution__action svg { width: 20px; height: 20px; }
 
+    /* Public and private applications */
+    .applications { background: var(--paper); }
+    .applications__head { display: grid; grid-template-columns: 1.35fr .65fr; gap: 70px; align-items: end; }
+    .applications__head > p { max-width: 520px; margin: 0; color: var(--steel); font-size: 17px; }
+    .application-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 76px; border-top: 1px solid var(--black); border-bottom: 1px solid var(--black); }
+    .application { min-width: 0; }
+    .application + .application { border-left: 1px solid var(--line); }
+    .application__media { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: var(--black-soft); }
+    .application__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms ease; }
+    .application:hover .application__media img { transform: scale(1.025); }
+    .application__body { padding: 34px clamp(24px, 3vw, 44px) 40px; }
+    .application__type { display: flex; align-items: center; gap: 10px; margin: 0 0 20px; color: var(--signal); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    .application__type svg { width: 18px; height: 18px; }
+    .application h3 { margin: 0; font-size: clamp(29px, 2.6vw, 42px); line-height: 1.05; }
+    .application__summary { min-height: 88px; margin: 22px 0 0; color: var(--steel); font-size: 15px; }
+    .application__uses { display: grid; grid-template-columns: 1fr 1fr; margin: 34px 0 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+    .application__uses li { min-height: 72px; display: flex; align-items: center; gap: 10px; padding: 13px 14px 13px 0; border-bottom: 1px solid var(--line); color: #333a40; font-size: 12px; font-weight: 700; }
+    .application__uses li:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
+    .application__uses svg { width: 16px; height: 16px; flex: 0 0 auto; color: var(--signal); }
+    .application__action { margin-top: 30px; }
+
     /* Terminal feature */
     .terminal { padding: 10px; color: var(--white); background: var(--paper-bright); }
     .terminal__shell { display: grid; grid-template-columns: 1.05fr .95fr; min-height: 760px; background: var(--black); }
@@ -494,13 +515,14 @@
       .hero__authority { min-height: 260px; }
       .hero__facts { grid-template-columns: 1fr 1fr; gap: 24px; }
       .hero__authority > p { display: none; }
-      .impact__grid, .terminal__shell, .manifesto__head, .manifesto__body, .solutions__head, .capabilities__head, .process__head, .authority__grid, .quote__grid, .faq__grid, .final-cta__inner { grid-template-columns: 1fr; }
+      .impact__grid, .terminal__shell, .manifesto__head, .manifesto__body, .solutions__head, .applications__head, .capabilities__head, .process__head, .authority__grid, .quote__grid, .faq__grid, .final-cta__inner { grid-template-columns: 1fr; }
       .impact__copy { max-width: 700px; }
       .manifesto__head, .manifesto__body { gap: 54px; }
       .manifesto__body { margin-top: 80px; }
       .manifesto__year { font-size: min(52vw, 360px); }
       .solutions__head { gap: 28px; }
       .solutions__head .section-intro { margin: 0; }
+      .applications__head { gap: 28px; }
       .solution { grid-template-columns: 70px 1fr 54px; }
       .solution p { grid-column: 2 / 3; }
       .solution__action { grid-column: 3; grid-row: 1 / span 2; }
@@ -558,6 +580,15 @@
       .solution h3 { font-size: 25px; }
       .solution p { font-size: 14px; line-height: 1.5; }
       .solution__action { width: 42px; height: 42px; }
+      .application-grid { grid-template-columns: 1fr; margin-top: 54px; }
+      .application + .application { border-top: 1px solid var(--black); border-left: 0; }
+      .application__body { padding: 28px 20px 38px; }
+      .application h3 { font-size: 30px; }
+      .application__summary { min-height: 0; font-size: 16px; }
+      .application__uses { grid-template-columns: 1fr; }
+      .application__uses li { min-height: 62px; padding: 12px 0; font-size: 14px; }
+      .application__uses li:nth-child(even) { padding-left: 0; border-left: 0; }
+      .application__action { width: 100%; }
       .terminal { padding: 0; }
       .terminal__image { min-height: 390px; }
       .terminal__copy { padding: 72px 20px; }
@@ -743,6 +774,56 @@
             <h3>Terminal P4 / T110</h3>
             <p>Terminal absorvedor para classe de velocidade de 110 km/h, conforme a aplicação.</p>
             <a class="solution__action js-wa" href="https://wa.me/5511933989839" data-cta="solution_p4" data-message="Olá, gostaria de confirmar a aplicação do terminal P4/T110." aria-label="Analisar terminal P4 T110"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section applications" id="aplicacoes" aria-labelledby="applications-title">
+      <div class="container">
+        <div class="applications__head reveal">
+          <div>
+            <p class="kicker">Aplicações públicas e privadas</p>
+            <h2 class="display display--compact" id="applications-title">A via muda. A responsabilidade de proteger permanece.</h2>
+          </div>
+          <p>Velocidade, fluxo, obstáculos, geometria e responsabilidade sobre a via mudam de uma operação para outra. Analisamos essas condições antes de indicar e cotar o sistema.</p>
+        </div>
+
+        <div class="application-grid">
+          <article class="application reveal">
+            <div class="application__media">
+              <img src="assets/aplicacao-obras-publicas-v1.jpg" alt="Defensa metálica instalada em alça de acesso de uma obra rodoviária pública" width="1536" height="1024" loading="lazy">
+            </div>
+            <div class="application__body">
+              <p class="application__type"><i data-lucide="landmark" aria-hidden="true"></i> Obras públicas e concessões</p>
+              <h3>Infraestrutura viária com desempenho documentado.</h3>
+              <p class="application__summary">Para projetos rodoviários e urbanos que exigem compatibilidade com o memorial, documentação técnica e fornecimento em escala.</p>
+              <ul class="application__uses">
+                <li><i data-lucide="route" aria-hidden="true"></i> Rodovias, acessos e alças</li>
+                <li><i data-lucide="construction" aria-hidden="true"></i> Pontes e viadutos</li>
+                <li><i data-lucide="traffic-cone" aria-hidden="true"></i> Vias e corredores urbanos</li>
+                <li><i data-lucide="file-text" aria-hidden="true"></i> Concessões e licitações</li>
+              </ul>
+              <a class="button button--signal application__action js-wa" href="https://wa.me/5511933989839" data-cta="application_public" data-message="Olá, gostaria de analisar defensas ou terminais para uma obra pública ou concessão."><i data-lucide="message-square-text" aria-hidden="true"></i> Analisar uma obra pública</a>
+            </div>
+          </article>
+
+          <article class="application reveal">
+            <div class="application__media">
+              <img src="assets/aplicacao-operacoes-privadas-v1.jpg" alt="Defensa metálica protegendo a circulação interna de um complexo industrial e logístico" width="1536" height="1024" loading="lazy">
+            </div>
+            <div class="application__body">
+              <p class="application__type"><i data-lucide="factory" aria-hidden="true"></i> Operações privadas</p>
+              <h3>Circulação interna com pessoas e ativos mais protegidos.</h3>
+              <p class="application__summary">Para áreas privadas onde veículos leves ou pesados circulam próximos a estruturas, equipamentos, desníveis e rotas de pessoas.</p>
+              <ul class="application__uses">
+                <li><i data-lucide="warehouse" aria-hidden="true"></i> Centros logísticos e pátios</li>
+                <li><i data-lucide="factory" aria-hidden="true"></i> Indústrias e centros de distribuição</li>
+                <li><i data-lucide="ship" aria-hidden="true"></i> Portos, terminais e mineração</li>
+                <li><i data-lucide="car-front" aria-hidden="true"></i> Estacionamentos e acessos internos</li>
+              </ul>
+              <a class="button button--signal application__action js-wa" href="https://wa.me/5511933989839" data-cta="application_private" data-message="Olá, gostaria de analisar defensas ou terminais para uma operação privada."><i data-lucide="message-square-text" aria-hidden="true"></i> Analisar uma operação privada</a>
+            </div>
           </article>
         </div>
       </div>
